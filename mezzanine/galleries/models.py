@@ -95,6 +95,7 @@ class GalleryImage(Orderable):
     def __unicode__(self):
         return self.description
 
+    '''
     def save(self, *args, **kwargs):
         """
         If no description is given when created, create one from the
@@ -110,3 +111,4 @@ class GalleryImage(Orderable):
                             for i, s in enumerate(name)])
             self.description = name
         super(GalleryImage, self).save(*args, **kwargs)
+    '''
