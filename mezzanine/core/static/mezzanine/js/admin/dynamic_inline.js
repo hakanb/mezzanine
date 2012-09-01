@@ -32,6 +32,7 @@ $(function() {
 
     var itemSelector = window.__grappelli_installed ? '.items' : 'tbody';
     var parentSelector = '.dynamic-inline ' + itemSelector;
+    var orderFieldSelector = window.__grappelli_installed ? '._order input' : '.field-_order input';
 
     // Apply drag and drop to orderable inlines.
     $(parentSelector).sortable({handle: '.ordering', axis: 'y', opacity: '.7',
@@ -52,7 +53,7 @@ $(function() {
         console.log('clicked');
         $.each($(parentSelector), function(i, parent) {
             var order = 0;
-            $.each($(parent).find('._order input'), function(i, field) {
+            $.each($(parent).find(orderFieldSelector), function(i, field) {
                 var parent = $(field).parent().parent();
                 if (window.__grappelli_installed) {
                     parent = parent.parent();
